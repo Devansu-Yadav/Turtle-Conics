@@ -78,8 +78,14 @@ def hyperbola(a, b, h=None, k=None):
             else:
                 myturtle.down()
             myturtle.setposition(h+a*(1/math.cos(i/10)), k+b*math.tan(i/10))
-
-    if b > a:
+    elif a > b:
+        for i in range(64):
+            if i == 0:
+                myturtle.up()
+            else:
+                myturtle.down()
+            myturtle.setposition(h+b*math.tan(i/10), k+a*(1/math.cos(i/10)))
+    elif a == b:
         for i in range(64):
             if i == 0:
                 myturtle.up()

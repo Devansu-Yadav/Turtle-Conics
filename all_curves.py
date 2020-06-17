@@ -179,4 +179,21 @@ def heart(a, b, orientation, h=None, k=None, angle=None, angle_unit=None):
                                  - math.cos(4*(i/50))), h+a*(16*math.pow(math.sin(i/50), 3)))
             i += 1
 
+def butterfly(a, b, n=None, h=None, k=None):
+    myturtle = turtle.Turtle()
+
+    if h is None:
+        h = 0
+    if k is None:
+        k = 0
+    if n is None:
+        n = 602
+#  Default value for no of turns is 602 since that is the required no of turns to complete the curve.   
+    for i in range(n+1):
+        if i == 0:
+            myturtle.up()
+        else:
+            myturtle.down()
+        myturtle.setposition(h + a*math.sin(i/30)*(math.exp(math.cos(i/30)) - 2*math.cos((4*i)/30) - math.pow(math.sin(i/360), 5))
+                             , k + b*math.cos(i/30)*(math.exp(math.cos(i/30)) - 2*math.cos((4*i)/30) - math.pow(math.sin(i/360), 5)))
 
